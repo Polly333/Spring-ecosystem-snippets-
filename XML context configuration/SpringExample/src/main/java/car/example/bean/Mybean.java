@@ -6,7 +6,8 @@ public class Mybean {
     //setter , name matters it should be set then instance variable name, else error
     // spring context invokes setter method to set the instance variable, hence it is mandatory
     // msg is the property name that is instance variable name
-    public void setmsg(String message){
+    //setmsg or setMsg both works, setMsg preferred
+    public void setMsg(String message){
         this.msg=message;
     }
 
