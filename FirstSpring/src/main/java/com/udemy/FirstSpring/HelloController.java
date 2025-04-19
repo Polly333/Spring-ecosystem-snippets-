@@ -9,14 +9,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @GetMapping("/home")
+    //@GetMapping("/home")
+//    public String hello(){
+//        return "You can do it Poulamee!";
+//    }
 
-    public String hello(){
-        return "You can do it Poulamee!";
+    @GetMapping("/home")
+    public HelloResponse hello(){
+        //Getting JSON response
+        return new HelloResponse("You can do it Poulamee!");
+
     }
 
-    @PostMapping("/home")
-    public String greet(@RequestBody String name){
-        return "Cheers" + name;
+//    @PostMapping("/home")
+//    public String greet(@RequestBody String name){
+//        return "Cheers " + name;
+//    }
+
+
+    @PostMapping("/hello")
+    public HelloResponse greet (@RequestBody String name){
+        return new HelloResponse("Cheers " + name);
     }
 }
