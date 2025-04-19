@@ -1,10 +1,7 @@
 package com.udemy.FirstSpring;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
@@ -18,6 +15,15 @@ public class HelloController {
     public HelloResponse hello(){
         //Getting JSON response
         return new HelloResponse("You can do it Poulamee!");
+
+    }
+
+    //dynamic url
+    @GetMapping("/hi/{pet}/show")  //can have /home/{pet} only
+    public HelloResponse helloparam(@PathVariable String pet){
+        // the param name should be same as the @GetMapping var name
+        return new HelloResponse("You can do it Poulamee!");
+        //can use the param pet 
 
     }
 

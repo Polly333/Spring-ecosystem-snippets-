@@ -18,4 +18,5 @@ public class HelloResponse {
         //setter can omit , as Jackson library uses the getter
         //this.message=s;
     //}
+
 }
